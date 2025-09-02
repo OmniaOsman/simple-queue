@@ -45,7 +45,7 @@ npm run start:dev
 
 To add a job to the queue, use the following endpoint:
 ```ts
-POST /jobs
+POST: /mail/send
 {
   "email": "user@example.com"
 }
