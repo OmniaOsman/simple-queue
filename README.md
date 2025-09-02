@@ -54,3 +54,6 @@ POST /jobs
 ### Monitoring
 
 You can access the Bull Board at `http://localhost:3000/admin/queues`
+
+### Presentation for the job queue
+https://www.canva.com/design/DAGxunkMpig/e4j8BmbcbwDdHAljeZU_DA/edit?utm_content=DAGxunkMpig&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
