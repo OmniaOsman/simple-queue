@@ -8,7 +8,7 @@ A lightweight job queue system built with NestJS and Bull for handling backgroun
 - 📧 Email job queuing system
 - 🚀 Built with NestJS for scalable architecture
 - 📊 Queue monitoring with Bull Board
-- 🔒 TypeScript support for better development experience
+- 🔒 TypeScript support for a better development experience
 
 ## Tech Stack
 
@@ -32,8 +32,7 @@ A lightweight job queue system built with NestJS and Bull for handling backgroun
 2. Install dependencies:
    ```bash
    npm install
-   # or
-   yarn
+   ```
 3. Copy `.env.example` to `.env` and configure your environment variables
 4. Start Redis server
 5. Start the application:
