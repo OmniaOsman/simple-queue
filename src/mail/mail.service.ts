@@ -8,7 +8,7 @@ export class MailService {
     ) {}
 
     async sendMailToUser(email: string) {
-        await this.messageService.sendEmail(email);
+        await this.messageService.addEmailToBroker(email);
         console.log(`📤 Job added to queue for: ${email}`);
         return { success: true, email };
       }

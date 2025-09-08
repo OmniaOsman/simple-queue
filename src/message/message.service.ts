@@ -6,8 +6,7 @@ import type { Queue } from 'bull';
 export class MessageService {
   constructor(@InjectQueue('message-queue') private queue: Queue) {}
 
-
-  async sendEmail(email: string) {
+  async addEmailToBroker(email: string) {
     await this.queue.add('send-email', { email });
   }
 

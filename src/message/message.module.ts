@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { BullModule } from '@nestjs/bull';
 import { MessageService } from './message.service';
-import { MessageProcessor } from './message.processor/message.processor';
+import { MessageProcessor } from './message.processor';
 
 @Module({
   imports: [
