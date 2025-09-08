@@ -21,21 +21,26 @@ export class MessageProcessor {
       throw new Error('SMTP credentials not configured');
     }
 
+    const port = Number(this.configService.get('SMTP_PORT'));
+    const secure = this.configService.get('SMTP_SECURE') === 'true';
+    const rejectUnauthorized = this.configService.get('SMTP_TLS_REJECT_UNAUTHORIZED') === 'true';
+
     const transport = nodemailer.createTransport({
-      host: "sandbox.smtp.mailtrap.io",
-      port: this.configService.get('SMTP_PORT'),
+      host: this.configService.get('SMTP_HOST'),
+      port,
+      secure,
       auth: {
         user: this.configService.get('SMTP_USER'),
-        pass: this.configService.get('SMTP_PASS')
+        pass: this.configService.get('SMTP_PASS'),
       },
-      secure: this.configService.get('SMTP_SECURE'),
       tls: {
-        rejectUnauthorized: this.configService.get('SMTP_TLS_REJECT_UNAUTHORIZED')
-      }
+        rejectUnauthorized,
+      },
     });
+    
 
     const mailOptions = {
-      from: process.env.MAIL_FROM || 'noreply@example.com',
+      from: this.configService.get('MAIL_FROM') || 'noreply@example.com',
       to: email,
       subject: 'Test Email',
       text: 'This is a test email from your queue service',
